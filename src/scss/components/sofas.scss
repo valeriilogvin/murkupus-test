@@ -1,0 +1,17 @@
+.sofas{
+  &-container{
+    width: 1140px;
+    margin: 0 auto;
+  }
+  &-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  &-item{
+    margin: 15px;
+    width: calc(20% - 30px);
+  }
+}

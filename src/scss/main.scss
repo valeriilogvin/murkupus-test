@@ -1,0 +1,13 @@
+@import "fonts";
+@import "resetcss";
+@import "variables";
+
+/* global-style */
+@import "global";
+@import "typography";
+/* global-style : end */
+
+/* styles of templates */
+@import "components/sofas";
+
+/* styles of templates : end */
