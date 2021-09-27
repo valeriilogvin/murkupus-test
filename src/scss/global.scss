@@ -12,3 +12,79 @@ body {
   font-style: normal;
   font-weight: normal;
 }
+
+.anim-btn{
+  cursor: pointer;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  color: #000000;
+
+  &:hover {
+    &:before {
+      color: #000000;
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+
+  &:hover & {
+    &__overlay {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    &__text {
+      transform: translate3d(-50%, 0, 0);
+      opacity: 0;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transform: translate3d(100%, 0, 0);
+    background-color: #ededed;
+    opacity: 0;
+    transition: transform .5s ease, opacity .3s ease;
+    border-radius: 2px;
+    display: block;
+  }
+
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 1;
+    display: inline-block;
+  }
+
+  &:focus {
+    .anim-btn__overlay {
+      background:#ededed;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  //@media (max-width: 1024px) {
+  //  font-size: 14px;
+  //  height: 50px;
+  //  line-height: 50px;
+  //}
+  //
+  //@media (max-width: 767px) {
+  //  width: 100%;
+  //  justify-content: center;
+  //}
+}

@@ -144,6 +144,7 @@ exports.dev = series(
 
 
 exports.wp = series(
+    clean,
     parallel(styles, styleLib, scriptLib),
     watcher
 );

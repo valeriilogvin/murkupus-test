@@ -92,11 +92,16 @@ function custom_product_link( $link ) {
         <div class="sofas-item-modal">
             <a 
                 data-quantity="1" 
-                data-product_id="'.$product->id.'" 
-                href="?add-to-cart='.$product->id.'" 
-                class="sofas-item-btn"
+                data-product_id="'. get_the_ID() .'" 
+                href="'. $product->add_to_cart_url()  .'"
+                value="'. esc_attr( $product->get_id() ) .'" 
+                data-product_sku="'. esc_attr($sku) .'" 
+                aria-label="Add “'. the_title_attribute() .'” to your cart"
+                class="sofas-item-btn anim-btn ajax_add_to_cart add_to_cart_button"
+                data-text="Add to cart"
             >
-              Add to cart
+                <span class="anim-btn__overlay"></span>
+                <span class="anim-btn__text">Add to cart</span>
             </a>
         </div>
     ';
