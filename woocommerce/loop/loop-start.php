@@ -19,4 +19,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="sofas-wrapper">
+<div class="sofas-container">
+  <div class="sofas-wrapper">
